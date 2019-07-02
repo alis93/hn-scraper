@@ -101,7 +101,10 @@ func TestCalculatePoints(t *testing.T) {
 			test := test //capture range variable
 			t.Parallel()
 			item := loadItem(t, test.id)
-			points := cnv.calculatePoints(item)
+			points, err := cnv.calculatePoints(item)
+			if err != nil {
+				t.Errorf("Failed to calculate points. Reason : %s", err.Error())
+			}
 			if points != test.expectedStory.Points {
 				t.Errorf("Points incorrect. \n\t Expected %d Actual : %d", test.expectedStory.Points, points)
 			}
@@ -117,7 +120,10 @@ func TestCountComments(t *testing.T) {
 			test := test //capture range variable
 			t.Parallel()
 			item := loadItem(t, test.id)
-			comments := cnv.countComments(item)
+			comments, err := cnv.countComments(item)
+			if err != nil {
+				t.Errorf("Failed to count comments. Reason : %s", err.Error())
+			}
 			if comments != test.expectedStory.Comments {
 				t.Errorf("Comments incorrect. \n\t Expected %d Actual : %d", test.expectedStory.Comments, comments)
 			}
@@ -133,7 +139,7 @@ func TestConvertToStory_no_options(t *testing.T) {
 			t.Parallel()
 			item := loadItem(t, test.id)
 			cnv := &ItemConverter{false, false, 0, 0, 0}
-			story, err := cnv.ConvertToStory(idx+1, item)
+			story, err := cnv.Convert(idx+1, item)
 
 			if err != nil {
 				t.Fatalf("Failed to convert story: Reason %s", err.Error())
@@ -174,7 +180,7 @@ func TestConvertToStory_with_options(t *testing.T) {
 
 			cnv := &ItemConverter{false, true, stringLength, 0, 0}
 
-			story, err := cnv.ConvertToStory(idx+1, item)
+			story, err := cnv.Convert(idx+1, item)
 
 			if err != nil {
 				t.Fatalf("Failed to convert story: Reason %s", err.Error())
