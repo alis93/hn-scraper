@@ -101,7 +101,7 @@ Most processing happens in the hackernews package.
 There are 4 main files.
 * api.go handles networks calls to the hackernews api
 * item.go contains struct definitions for different types of items from hackernews
-* itemOpts.go contains struct definitions for story options, Which defines customizable constraints for creating a story. For example, you can control if there is a maxlength enforced.
+* itemConverter.go contains struct for converting raw items into other items, for example has a method to convert a rawitem to a story.
 * Errors.go contains definitions for errors 
 * utils.go contains general helper functions 
 
@@ -126,3 +126,13 @@ Also if a story is invalid. For example has an invalid uri, then it will print a
 We could improve this by making it get additional stories until it meets the required number.
 This would simply involve keeping track of the ids (and possibly rank/index) of retrieved stories and then using the following ids from the list of story ids that we have. Since the limit is 100 and we always get the top 500. For example, if we ask for 50, and 2 of them are invalid. Then we can get story 51 and 52 as we have their ids aswell.
 
+### Converting/Processing items
+
+The itemConverter takes a set of arguments which define constraints on converting items.
+For example it defines the maximum string length and if it is longer, then it will truncate the string.
+
+If we want to convert other types of items in future, we can create more converter structs with convert functions. Then we can add a common converter interface too?
+Alternatively, we can add another convertTo method here, but that would make this struct more complex. It may need more fields and would be large and not as flexible.
+Multiple types of converters would be better.
+
+We could use an enum for ItemType, since itemtype has a fixed set of values it can be, removes need for strings which are error prone.

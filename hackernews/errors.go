@@ -24,6 +24,10 @@ type InvalidItemTypeErr struct {
 	actualType   string
 }
 
+type InvalidURLErr struct {
+	value string
+}
+
 func (e *ClientErr) Error() string {
 	return fmt.Sprintf("Failed to create Client. \t %s", e.msg)
 }
@@ -34,4 +38,8 @@ func (e *MinValErr) Error() string {
 
 func (e *InvalidItemTypeErr) Error() string {
 	return fmt.Sprintf("Type was not as expected. Expected %s got %s ", e.expectedtype, e.actualType)
+}
+
+func (e *InvalidURLErr) Error() string {
+	return fmt.Sprintf("item has an invalid url scheme. \t %s", e.value)
 }

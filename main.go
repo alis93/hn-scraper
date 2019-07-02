@@ -27,12 +27,11 @@ func main() {
 	}
 
 	// get array of top story ids
-
 	storyIds, err := client.GetTopStoryIds(numPosts)
 	if err != nil {
 		ErrorLog.Fatal(err)
 	}
-	storyOpts, err := hackernews.NewStoryOpts(false, true, 256, 1, 1)
+	converter, err := hackernews.NewItemConverter(false, true, 256, 1, 1)
 	if err != nil {
 		ErrorLog.Fatal(err)
 	}
@@ -49,7 +48,7 @@ func main() {
 				ErrorLog.Printf("Unable to get item with id %d, Reason: %s \n", storyId, err.Error())
 			}
 
-			story, err := rawItem.ConvertToStory(index+1, storyOpts)
+			story, err := converter.ConvertToStory(index+1, rawItem)
 			if err != nil {
 				ErrorLog.Printf("Unable to convert item with id %d to story, Reason: %s \n", storyId, err.Error())
 			}
@@ -70,6 +69,7 @@ func main() {
 	}
 }
 
+//
 func getNumPostsArg() int {
 	numPosts := flag.Int("posts", 0, "How many posts to retrieve")
 	flag.Parse()
