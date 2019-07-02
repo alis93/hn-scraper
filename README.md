@@ -3,6 +3,9 @@
 A hackernews scraper implemented in Go that retrieves the top posts from hackernews and prints them to stdout as json.
 
 
+
+
+
 # Built With 
 * Go     1.11.5 
 * linux  18.10
