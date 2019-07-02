@@ -24,13 +24,13 @@ A dockerfile for this project has been provided, so commands can be executed usi
 
     First build the docker image
 
-    ```
+    ```Dockerfile
     docker build -t hn-scraper .
     ```
 
     To run 
 
-    ```
+    ```Dockerfile
     docker run hn-scraper --posts n
     ```
 
@@ -41,13 +41,13 @@ A dockerfile for this project has been provided, so commands can be executed usi
 
     First build an executable
 
-    ```
+    ```go
     go build
     ```
 
     To run 
 
-    ```
+    ```bash
     hn-scraper --posts n
     ```
     
@@ -66,13 +66,13 @@ A dockerfile for testing this project has been provided, so tests can be execute
 
     First build the docker image
 
-    ```
+    ```Dockerfile
     docker build -t hn-scraper-tests .
     ```
 
     To run tests
 
-    ```
+    ```Dockerfile
     docker run hn-scraper-tests
     ```
 
@@ -81,7 +81,7 @@ A dockerfile for testing this project has been provided, so tests can be execute
 
     Run the following command 
 
-    ```
+    ```Go
     go tests ./...
     ```
 
