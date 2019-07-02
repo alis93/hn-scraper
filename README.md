@@ -2,10 +2,6 @@
 
 A hackernews scraper implemented in Go that retrieves the top posts from hackernews and prints them to stdout as json.
 
-
-
-
-
 # Built With 
 * Go     1.11.5 
 * linux  18.10
@@ -28,36 +24,37 @@ A dockerfile for this project has been provided, so commands can be executed usi
 
 ### Docker
 
-  First build the docker image
+First build the docker image
 
-    ```
-    docker build -t hn-scraper .
-    ```
+```
+docker build -t hn-scraper .
+```
 
-  To run 
+To run 
 
-    ```
-    docker run hn-scraper --posts n
-    ```
+```
+docker run hn-scraper --posts n
 
-  where n is how many posts you want to scrape
+where n is how many posts you want to scrape
+```
+
 
 #### Golang
 
 
-  First build an executable
+First build an executable
 
-    ```
-    go build
-    ```
+```
+go build
+```
 
-  To run 
+To run 
 
-    ```
-    hn-scraper --posts n
-    ```
-    
-  where n is how many posts you want to scrape
+```
+hn-scraper --posts n
+
+where n is how many posts you want to scrape
+```
 
 
 ## Test
@@ -70,28 +67,29 @@ A dockerfile for testing this project has been provided, so tests can be execute
 
 ### Docker
 
-  First build the docker image
+First build the docker image
 
-    ```
-    docker build -t hn-scraper-tests .
-    ```
+```
+docker build -t hn-scraper-tests .
+```
 
-  To run tests
+To run tests
 
-    ```
-    docker run hn-scraper-tests
-    ```
+```
+docker run hn-scraper-tests
+```
 
 
 ### Golang
 
   Run the following command 
 
-    ```
-    go tests ./...
-    ```
+```
+go tests ./...
 
-  Note: ./... will ensure all tests in packages are run.
+Note: ./... will ensure all tests in packages are run.
+```
+
 
 
 # Notes
