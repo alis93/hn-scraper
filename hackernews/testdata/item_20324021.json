@@ -1,0 +1,11 @@
+{
+    "by": "moks",
+    "descendants": 14,
+    "id": 20324021,
+    "kids": [20330764, 20329340, 20330083, 20330835, 20330036, 20329426, 20330355],
+    "score": 110,
+    "time": 1561977029,
+    "title": "Mistakes we made adopting event sourcing and how we recovered",
+    "type": "story",
+    "url": "http://natpryce.com/articles/000819.html"
+}
