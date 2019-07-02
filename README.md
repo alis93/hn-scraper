@@ -1,4 +1,6 @@
-This project scrapes the top posts from hackernews.
+This project scrapes the top posts from hackernews and prints them to stdout as json.
+
+Uses v0 of the hackernews api.
 
 # Built With 
 * Go     1.11.5 
