@@ -48,7 +48,7 @@ func main() {
 				ErrorLog.Printf("Unable to get item with id %d, Reason: %s \n", storyId, err.Error())
 			}
 
-			story, err := converter.ConvertToStory(index+1, rawItem)
+			story, err := converter.Convert(index+1, rawItem)
 			if err != nil {
 				ErrorLog.Printf("Unable to convert item with id %d to story, Reason: %s \n", storyId, err.Error())
 			}
