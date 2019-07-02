@@ -99,11 +99,11 @@ Note: ./... will ensure all tests in packages are run.
 Most processing happens in the hackernews package.
 
 There are 4 main files.
-    * api.go handles networks calls to the hackernews api
-    * item.go contains struct definitions for different types of items from hackernews
-    * itemOpts.go contains struct definitions for story options, Which defines customizable constraints for creating a story. For example, you can control if there is a maxlength enforced.
-    * Errors.go contains definitions for errors 
-    * utils.go contains general helper functions 
+* api.go handles networks calls to the hackernews api
+* item.go contains struct definitions for different types of items from hackernews
+* itemOpts.go contains struct definitions for story options, Which defines customizable constraints for creating a story. For example, you can control if there is a maxlength enforced.
+* Errors.go contains definitions for errors 
+* utils.go contains general helper functions 
 
 ### Tests
 
