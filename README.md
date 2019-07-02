@@ -20,38 +20,38 @@ A dockerfile for this project has been provided, so commands can be executed usi
 
 ## Install
 
-####Docker
+### Docker
 
-    First build the docker image
+  First build the docker image
 
     ```
     docker build -t hn-scraper .
     ```
 
-    To run 
+  To run 
 
     ```
     docker run hn-scraper --posts n
     ```
 
-    where n is how many posts you want to scrape
+  where n is how many posts you want to scrape
 
 #### Golang
 
 
-    First build an executable
+  First build an executable
 
     ```
     go build
     ```
 
-    To run 
+  To run 
 
     ```
     hn-scraper --posts n
     ```
     
-    where n is how many posts you want to scrape
+  where n is how many posts you want to scrape
 
 
 ## Test
@@ -64,13 +64,13 @@ A dockerfile for testing this project has been provided, so tests can be execute
 
 ### Docker
 
-    First build the docker image
+  First build the docker image
 
     ```
     docker build -t hn-scraper-tests .
     ```
 
-    To run tests
+  To run tests
 
     ```
     docker run hn-scraper-tests
@@ -79,13 +79,13 @@ A dockerfile for testing this project has been provided, so tests can be execute
 
 ### Golang
 
-    Run the following command 
+  Run the following command 
 
     ```
     go tests ./...
     ```
 
-    Note: ./... will ensure all tests in packages are run.
+  Note: ./... will ensure all tests in packages are run.
 
 
 # Notes
