@@ -51,7 +51,7 @@ go build
 To run 
 
 ```
-hn-scraper --posts n
+./hn-scraper --posts n
 
 where n is how many posts you want to scrape
 ```
